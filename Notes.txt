@@ -1,0 +1,29 @@
+Day 3
+Create folder
+
+after that open folder with vscode and commit command
+npm init
+tip : npm init -y
+
+nmp install express
+
+ tip: npm i express
+ semantic versoning(semVer)
+ major.minor.patch(4.18.3)
+
+ get started express
+ const app = require('express')()
+  
+port number: 0-65536(port number are availabel)
+same project are not access same port number.
+lets take eg: if we consider a hotel rooms are at hotel are port number
+there are so many reserved port number like hotel kitchen room, store room at hotel. 
+like 3000 room number as port, 200,2001 are like that so if any person alredy use
+any of these room , next or new customer can't access same port number and show some error
+
+app.listen(3000,()=>){
+    console.log("nodejs server has started port 3000")
+}
+
+localhost:3000//(localhost is backaddress)
+eg 127.0.0.1:3000
