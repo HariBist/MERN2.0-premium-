@@ -15,7 +15,7 @@ nmp install express
  const app = require('express')()
   
 port number: 0-65536(port number are availabel)
-same project are not access same port number.
+same project are not able access same port number while both are running
 lets take eg: if we consider a hotel rooms are at hotel are port number
 there are so many reserved port number like hotel kitchen room, store room at hotel. 
 like 3000 room number as port, 200,2001 are like that so if any person alredy use
@@ -27,3 +27,64 @@ app.listen(3000,()=>){
 
 localhost:3000//(localhost is backaddress)
 eg 127.0.0.1:3000
+
+-----Day 4----
+
+nodemon npm package help to restart the server automaticall if any channnge done on the program file
+
+npm instlall nodemon 
+//for globally access : npm i nodemon -g
+set the nodemon on package.json folder 
+within script with any variable
+eg:
+"start":"nodemone app.js"
+and give command on terminal
+--: npm run start 
+
+another way to runautomatically is without uing thirdparty package
+commnad type: node --watch app.js
+
+
+lets create an oject const person = {
+    name: "Hari bist",
+    age: 22,
+    
+}
+json stands for javascript object notation
+for understand json is like plastic bag while you go shop for differnt things
+plastic bag hold all things. its like it store data and help to transfer data. it is light weight and move fast
+its like objet of javascript
+app.json{
+    "message":"welcome home",
+    "phone number": "986736892"
+}
+transfer data to frontennd to backend viceversa
+
+status code: we choose status code 200
+
+app.get("/",(req,res)=>{
+    res.status(200).json({
+        "message" : "Success"
+    })
+})
+XML is also used to transfer data from user to server but it is little bit slow and hevay weight comprasion to JSON
+
+
+status code lo lagee status(200) for Success
+res.status(200).json{
+    "message":"'success
+}
+
+
+MERN(Mongo, express,react,node )
+
+ORM--> sequelize, prism vanney package haru xan
+ORD->mongoDb
+
+Select * from user
+inset int tableNmaee (username, address)
+
+install the npm package mongoose for abstrack the data between user to server
+ 1)  npm install mongoose 
+ 2) require(mongoose)  on file
+ 
