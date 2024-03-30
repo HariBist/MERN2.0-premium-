@@ -40,10 +40,10 @@ res.status(200).json({
     })
     })
 
+
     //single read
     app.get("/book/:id",async (req,res)=>{ //:id(: is to) is dynamic nature ko hunxaa 
-    try{
-            const id= req.params.id
+                    const id= req.params.id
         const book = await Book.findById(id) //retun object garxa
         if(!book){
             res.status(404).json({
@@ -56,12 +56,31 @@ message:"single Book fatched",
 data : book
 })
         }
-    }
-    catch(error){
-        res.status(500).json({
-            message:"something went wrong"
         })
-    }
+
+
+     app.delete("/book/:id",async (req,res)=>{
+        const id = req.params.id
+       await Book.findByIdAndDelete(id)
+       res.status(200).json({
+        message:"Book Deleted Successfully"
+       })
+     })   
+
+app.patch("/book/:id",async (req,res)=>{
+    const id = req.params.id  //kun book update garney id ho vaney
+    const{bookName,bookPrice,authorName,isbnNumber,publication,publishedAt}=req.body
+    await Book.findByIdAndUpdate(id,{
+        bookName: bookName,
+        bookPrice:bookPrice,
+        authorName: authorName,
+        publication: publication,
+        isbnNumber : isbnNumber,
+        publishedAt: publishedAt
+    })
+    res.status(200).json({
+        message:"Book update Successfully"
+    })
 })
 
 

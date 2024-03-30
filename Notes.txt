@@ -88,3 +88,26 @@ install the npm package mongoose for abstrack the data between user to server
  1)  npm install mongoose 
  2) require(mongoose)  on file
  
+
+ //CURD operation in node js
+ add or insert on table= create()
+ Read = find(),findById()
+ update : findByIdAndUpdate()
+ delete: findByIdAndDelete()
+
+
+
+ REST API
+Get books-->/getAllBooks
+Delete book-->/delete/:id-delete
+Updat boo---/update/:id-patch
+single boo--/single/:id
+Get Author info -->/author/1
+
+RESTFUL API
+Get books-->books-get
+delete book-->/books/:id-delete
+update book-->/books/:id-patch
+singel book-->/books/:id-->get
+add book -->/books-post
+Get Author info-->books/comment/1
