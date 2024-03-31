@@ -5,6 +5,10 @@ const app = express();
 
 const Book = require('./model/bookModel.js');
 
+const {multer,storage} = require('./middleware/multerConfig.js')
+const upload = multer({storage :storage})
+
+
  app.use(express.json());//hamliey express lai json vanney record lai bujaa vaney ko
 // app.use(express.urlencoded({extended: true}))  //node js batw backend garxaa veny yoo diney
 
@@ -16,7 +20,7 @@ app.get("/",(req,res)=>{
     });
 });
 
-app.post("/book",async(req,res)=>{
+app.post("/book",upload.single("image"),async(req,res)=>{
 
     const {bookName,bookPrice,isbnNumber,authorName,publishedAt,publication}=req.body
     await Book.create({
