@@ -19,7 +19,10 @@ authorName : {
 publishedAt :{
     type: String
 },
-    publication: {
+publication: {
+        type: String
+    },
+ imageUrl :{
         type: String
     }
 })
